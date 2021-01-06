@@ -8,13 +8,13 @@ import java.util.Scanner;
 
 public class ApiCityWeatherRequest implements ApiRequest{
 
-    private URL apiURL;
+    private URL url;
 
     public ApiCityWeatherRequest(String url) {
         try {
-            this.apiURL = new URL(url);
+            this.url = new URL(url);
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            this.url = null;
         }
 
     }
@@ -22,13 +22,13 @@ public class ApiCityWeatherRequest implements ApiRequest{
     @Override
     public String send() {
         try {
-            HttpURLConnection conn = (HttpURLConnection) this.apiURL.openConnection();
+            HttpURLConnection conn = (HttpURLConnection) this.url.openConnection();
             conn.setRequestMethod("GET");
             conn.connect(); 
             int responsecode = conn.getResponseCode(); 
             if (responsecode == 200){
                 StringBuilder response = new StringBuilder();
-                Scanner scanner = new Scanner(this.apiURL.openStream());
+                Scanner scanner = new Scanner(this.url.openStream());
                 String line;
                 while(scanner.hasNext())
                 {
@@ -41,7 +41,6 @@ public class ApiCityWeatherRequest implements ApiRequest{
                 throw new RuntimeException("Failed to get resource from url.");
             }
         } catch (IOException e) {
-                e.getMessage();
                 return null;
         }
     }
