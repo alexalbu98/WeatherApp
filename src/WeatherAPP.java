@@ -1,31 +1,26 @@
-import Controller.CityWeatherForecast;
-import Controller.WeatherForecast;
-import Model.FileLogger;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class WeatherAPP extends Application {
 
-    private WeatherForecast forecast;
+    Stage window;
+    Scene cityWeatherWindow;
+    Scene mainMenu;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("WeatherApp");
-        Button button = new Button("City Weather");
-        
-        StackPane layout = new StackPane();
-        layout.getChildren().add(button);
-        Scene scene = new Scene(layout, 1000, 500);
-        primaryStage.setScene(scene);
+        window = primaryStage;
+        Parent root = FXMLLoader.load(getClass().getResource("View/MainMenu.fxml"));
+        mainMenu = new Scene(root, 1000, 500);
+        window.setTitle("WeatherApp");
+        window.setScene(mainMenu);
         primaryStage.show();
     }
 
-    public static void main(String[] args) {
-        FileLogger logger = new FileLogger("loger.txt");
-        WeatherForecast forecast = new CityWeatherForecast("http://api.openweathermap.org/data/2.5/weather", "1f811bcd144afbd814c2b4f5f02dfa0a", logger);       
+    public static void main(String[] args) {      
         Application.launch(args);
     }
 

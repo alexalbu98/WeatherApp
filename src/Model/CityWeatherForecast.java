@@ -1,8 +1,4 @@
-package Controller;
-
-import Model.ApiCityWeatherRequest;
-import Model.ApiRequest;
-import Model.Logger;
+package Model;
 
 public class CityWeatherForecast implements WeatherForecast {
 
