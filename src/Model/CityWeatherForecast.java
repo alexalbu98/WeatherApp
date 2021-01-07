@@ -1,21 +1,16 @@
 package Model;
 
+import Singletons.AppLogger;
+
 public class CityWeatherForecast implements WeatherForecast {
 
     private String apiKEY;
     private String url;
-    private Logger logger;
 
-    public CityWeatherForecast(String url, String key, Logger logger) {
+    public CityWeatherForecast(String url, String key) {
 
         this.url = url;
         this.apiKEY = key;
-        this.logger = logger;
-
-    }
-
-    public void setLogger(Logger logger){
-        this.logger = logger;
     }
 
     @Override
@@ -25,6 +20,7 @@ public class CityWeatherForecast implements WeatherForecast {
         ApiRequest request = new ApiCityWeatherRequest(url);
         String response = request.send();
         if (response == null){
+            AppLogger logger = AppLogger.getInstance();
             logger.logMessage("Failed to get results for search" + query);
         }
         return response;

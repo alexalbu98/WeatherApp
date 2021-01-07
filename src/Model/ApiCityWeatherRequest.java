@@ -6,6 +6,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
+import Singletons.AppLogger;
+
 public class ApiCityWeatherRequest implements ApiRequest{
 
     private URL url;
@@ -21,6 +23,9 @@ public class ApiCityWeatherRequest implements ApiRequest{
 
     @Override
     public String send() {
+        if(this.url == null){
+            return null;
+        }
         try {
             HttpURLConnection conn = (HttpURLConnection) this.url.openConnection();
             conn.setRequestMethod("GET");
@@ -41,6 +46,8 @@ public class ApiCityWeatherRequest implements ApiRequest{
                 throw new RuntimeException("Failed to get resource from url.");
             }
         } catch (IOException e) {
+                AppLogger logger = AppLogger.getInstance();
+                logger.logMessage("Failed to get response from " + this.url.toString());
                 return null;
         }
     }

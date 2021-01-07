@@ -1,0 +1,29 @@
+[
+    {
+        "country":"Romania",
+        "cities":[{"name":"Craiova"},
+            {"name":"Timisoara"},
+            {"name":"Iasi"},
+            {"name":"Constanta"},
+                {"name":"Bucuresti"}]
+    },
+
+
+    {
+        "country":"England",
+        "cities":[{"name":"London"},
+            {"name":"York"},
+            {"name":"Manchester"},
+            {"name":"Liverpool"},
+                {"name":"Leicester"}]
+    },
+
+    {
+        "country":"France",
+        "cities":[{"name":"Nice"},
+            {"name":"Marseille"},
+            {"name":"Lyon"},
+            {"name":"Nantes"},
+                {"name":"Bordeaux"}]
+    }
+]

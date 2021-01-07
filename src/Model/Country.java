@@ -24,4 +24,11 @@ public class Country {
         this.cities.add(city);
     }
 
+    public ArrayList<String> getCities(){
+        ArrayList<String> cityNames = new ArrayList<>();
+        for(City city: cities){
+            cityNames.add(city.getName());
+        }
+        return cityNames;
+    }
 }

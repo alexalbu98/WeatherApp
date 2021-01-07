@@ -45,7 +45,8 @@ public class AppStage {
             window.setScene(scene);
             window.show();
         } catch (IOException e) {
-            e.printStackTrace();
+            AppLogger logger = AppLogger.getInstance();
+            logger.logMessage("Failed to load window "+location);
         }
         
     }

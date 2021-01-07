@@ -1,3 +1,4 @@
+import Singletons.AppLogger;
 import Singletons.AppStage;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -17,7 +18,9 @@ public class WeatherAPP extends Application {
         
     }
 
-    public static void main(String[] args) {      
+    public static void main(String[] args) {   
+        AppLogger logger = AppLogger.getInstance("log.txt");
+        logger.logMessage("Logs on errors will be kept here!\n");
         Application.launch(args);
     }
 
