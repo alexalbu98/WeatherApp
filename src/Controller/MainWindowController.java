@@ -1,14 +1,11 @@
 package Controller;
 
-import java.io.IOException;
 
 import Singletons.AppStage;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
-public class MainController {
+public class MainWindowController {
 
     public Button cityWeatherButton;
     public VBox vbox;
