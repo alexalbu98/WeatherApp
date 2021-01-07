@@ -1,6 +1,5 @@
+import Singletons.AppStage;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -12,12 +11,10 @@ public class WeatherAPP extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        window = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("View/MainMenu.fxml"));
-        mainMenu = new Scene(root, 1000, 500);
-        window.setTitle("WeatherApp");
-        window.setScene(mainMenu);
-        primaryStage.show();
+        
+        AppStage app = AppStage.getInstance(primaryStage);
+        app.setStage("../View/MainMenu.fxml");
+        
     }
 
     public static void main(String[] args) {      
