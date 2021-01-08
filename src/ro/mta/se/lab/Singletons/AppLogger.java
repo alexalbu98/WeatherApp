@@ -1,4 +1,4 @@
-package Singletons;
+package ro.mta.se.lab.Singletons;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -34,6 +34,11 @@ public class AppLogger implements Logger {
             return instance;
     }
 
+    /**
+     * 
+     * @param file is the file where the logs will be kept
+     * @return an instance of class AppLogger
+     */
     static public AppLogger getInstance(String file){
         if(instance == null){
             instance = new AppLogger(file);

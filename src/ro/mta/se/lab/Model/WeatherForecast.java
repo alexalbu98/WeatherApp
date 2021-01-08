@@ -1,4 +1,4 @@
-package Model;
+package ro.mta.se.lab.Model;
 
 public interface WeatherForecast {
 

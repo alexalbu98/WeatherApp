@@ -6,19 +6,18 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch Java Program",
+            "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
         },
-        
-
         {
             "type": "java",
-            "name": "Launch WeatherAPP",
+            "name": "Launch Main",
             "request": "launch",
             "vmArgs": "--module-path /hdd/alex/javafx-sdk-11.0.2/lib --add-modules=javafx.controls,javafx.fxml",
-            "mainClass": "WeatherAPP",
+            "mainClass": "ro.mta.se.lab.Main",
             "projectName": "Tema2IP_a491dbc"
         }
+        
     ]
 }

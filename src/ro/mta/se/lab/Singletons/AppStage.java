@@ -1,4 +1,4 @@
-package Singletons;
+package ro.mta.se.lab.Singletons;
 
 import java.io.IOException;
 
@@ -34,7 +34,11 @@ public class AppStage {
         return instance;
     }
 
-    public void setStage(String location) {
+    /**
+     * 
+     * @param location the location of the scene that will be loaded in the stage 
+     */
+    public void setScene(String location) {
         Parent root;
         try {
             root = FXMLLoader.load(getClass().getResource(location));

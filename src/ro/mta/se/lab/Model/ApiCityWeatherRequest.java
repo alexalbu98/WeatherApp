@@ -1,4 +1,4 @@
-package Model;
+package ro.mta.se.lab.Model;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -6,7 +6,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
-import Singletons.AppLogger;
+import ro.mta.se.lab.Singletons.AppLogger;
+
 
 public class ApiCityWeatherRequest implements ApiRequest{
 

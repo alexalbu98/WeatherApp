@@ -1,4 +1,4 @@
-package Model;
+package ro.mta.se.lab.Model;
 import java.util.ArrayList;
 
 public class Country {

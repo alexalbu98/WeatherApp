@@ -1,9 +1,8 @@
-package Controller;
+package ro.mta.se.lab.Controller;
 
-
-import Singletons.AppStage;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
+import ro.mta.se.lab.Singletons.AppStage;
 
 public class MainWindowController {
 
@@ -12,7 +11,7 @@ public class MainWindowController {
 
     public void onCityWeatherButtonClicked() {
         AppStage app = AppStage.getInstance();
-        app.setStage("../View/CityWeather.fxml");
+        app.setScene("../View/CityWeather.fxml");
     }
 
     

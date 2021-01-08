@@ -1,4 +1,4 @@
-package Singletons;
+package ro.mta.se.lab.Singletons;
 
 public interface Logger {
     /**

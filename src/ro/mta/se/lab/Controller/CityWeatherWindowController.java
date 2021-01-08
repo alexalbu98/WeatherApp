@@ -1,4 +1,4 @@
-package Controller;
+package ro.mta.se.lab.Controller;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -11,14 +11,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import Model.City;
-import Model.CityWeatherForecast;
-import Model.CityWeatherInfo;
-import Model.Country;
-import Model.WeatherForecast;
-import Singletons.AppConfiguration;
-import Singletons.AppLogger;
-import Singletons.AppStage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
@@ -26,6 +18,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import ro.mta.se.lab.Model.City;
+import ro.mta.se.lab.Model.CityWeatherForecast;
+import ro.mta.se.lab.Model.CityWeatherInfo;
+import ro.mta.se.lab.Model.Country;
+import ro.mta.se.lab.Model.WeatherForecast;
+import ro.mta.se.lab.Singletons.AppConfiguration;
+import ro.mta.se.lab.Singletons.AppLogger;
+import ro.mta.se.lab.Singletons.AppStage;
 
 public class CityWeatherWindowController implements Initializable {
 
@@ -77,7 +77,7 @@ public class CityWeatherWindowController implements Initializable {
 
     public void onGoBackClicked() {
         AppStage app = AppStage.getInstance();
-        app.setStage("../View/MainMenu.fxml");
+        app.setScene("../View/MainMenu.fxml");
     }
 
     public void onFindWeatherClicked() {
@@ -87,7 +87,7 @@ public class CityWeatherWindowController implements Initializable {
         if (cityName != null && countryName != null) {
             try {
                 String jsonInfo = forecast.getWeatherInfo(cityName, conf.getUnits(), conf.getLanguage());
-                if(jsonInfo == null){
+                if (jsonInfo == null) {
                     throw new RuntimeException("Failed to get weather info form server!");
                 }
                 CityWeatherInfo info = new CityWeatherInfo();

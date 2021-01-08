@@ -1,6 +1,6 @@
-package Model;
+package ro.mta.se.lab.Model;
 
-import Singletons.AppLogger;
+import ro.mta.se.lab.Singletons.AppLogger;
 
 public class CityWeatherForecast implements WeatherForecast {
 

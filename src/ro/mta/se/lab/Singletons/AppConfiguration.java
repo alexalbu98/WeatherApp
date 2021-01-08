@@ -1,4 +1,4 @@
-package Singletons;
+package ro.mta.se.lab.Singletons;
 
 public class AppConfiguration {
     private String language;
@@ -19,11 +19,22 @@ public class AppConfiguration {
         this.citiesFile = citiesFile;
 
     }
-
+    /**
+     * 
+     * @return AppConfiguration object
+     */
     public static AppConfiguration getInstance(){
         return instance;   
     }
-
+    /**
+     * 
+     * @param citiesFile is the file where the cities info is stored
+     * @param apiURL is the api url for open weather 
+     * @param apiKEY is the api key for open weather
+     * @param units is the units in which data will be displayed
+     * @param language is the language in which data to be displayed
+     * @return an instance of AppConfiguration singleton class
+     */
     public static AppConfiguration getInstance(String citiesFile, String apiURL, String apiKEY, String units, String language){
         if (instance == null){
             instance = new AppConfiguration(citiesFile, apiURL, apiKEY, units, language);

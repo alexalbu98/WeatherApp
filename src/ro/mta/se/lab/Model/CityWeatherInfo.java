@@ -1,11 +1,12 @@
-package Model;
+package ro.mta.se.lab.Model;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import Singletons.AppLogger;
+import ro.mta.se.lab.Singletons.AppLogger;
+
 
 public class CityWeatherInfo implements Info {
 
