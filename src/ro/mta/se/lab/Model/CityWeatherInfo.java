@@ -1,5 +1,7 @@
 package ro.mta.se.lab.Model;
 
+import java.math.BigDecimal;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -14,8 +16,8 @@ public class CityWeatherInfo implements Info {
     private double wind_speed;
     private String description;
     private double feels_like_temp;
-    private long humidity;
-    private long pressure;
+    private double humidity;
+    private double pressure;
 
     /**
      * 
@@ -27,10 +29,10 @@ public class CityWeatherInfo implements Info {
     }
 
     private void getMainData(JSONObject main){
-        this.temp = (double)main.get("temp");
-        this.feels_like_temp = (double)main.get("feels_like");
-        this.pressure = (long)main.get("pressure");
-        this.humidity = (long)main.get("humidity");
+        this.temp = Double.valueOf(String.valueOf(main.get("temp")));
+        this.feels_like_temp = Double.valueOf(String.valueOf(main.get("feels_like")));
+        this.pressure = Double.valueOf(String.valueOf(main.get("pressure")));
+        this.humidity = Double.valueOf(String.valueOf(main.get("humidity")));
     }
 
     private void getWindData(JSONObject wind){
