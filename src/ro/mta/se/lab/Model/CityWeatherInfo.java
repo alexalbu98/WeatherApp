@@ -1,6 +1,5 @@
 package ro.mta.se.lab.Model;
 
-import java.math.BigDecimal;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;

@@ -26,6 +26,7 @@ import ro.mta.se.lab.Model.WeatherForecast;
 import ro.mta.se.lab.Singletons.AppConfiguration;
 import ro.mta.se.lab.Singletons.AppLogger;
 import ro.mta.se.lab.Singletons.AppStage;
+import ro.mta.se.lab.Singletons.SearchHistory;
 
 public class CityWeatherWindowController implements Initializable {
 
@@ -83,6 +84,7 @@ public class CityWeatherWindowController implements Initializable {
     public void onFindWeatherClicked() {
         String cityName = city.getValue();
         String countryName = country.getValue();
+        SearchHistory history = SearchHistory.getInstance();
         AppConfiguration conf = AppConfiguration.getInstance();
         if (cityName != null && countryName != null) {
             try {
@@ -90,6 +92,7 @@ public class CityWeatherWindowController implements Initializable {
                 if (jsonInfo == null) {
                     throw new RuntimeException("Failed to get weather info form server!");
                 }
+                history.logSearch(jsonInfo);
                 CityWeatherInfo info = new CityWeatherInfo();
                 info.setWeatherInfo(jsonInfo);
                 result.setText(info.getInfo());

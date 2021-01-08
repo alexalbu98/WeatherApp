@@ -21,7 +21,7 @@ public class CityWeatherForecast implements WeatherForecast {
         String response = request.send();
         if (response == null){
             AppLogger logger = AppLogger.getInstance();
-            logger.logMessage("Failed to get results for search" + query);
+            logger.logMessage("Failed to get results for search " + query);
         }
         return response;
     }
