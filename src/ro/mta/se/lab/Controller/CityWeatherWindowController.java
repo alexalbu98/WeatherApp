@@ -32,6 +32,7 @@ public class CityWeatherWindowController implements Initializable {
 
     private ArrayList<Country> countries;
     private WeatherForecast forecast;
+    private Country selectedCountry;
 
     public Button goBack;
     public VBox vbox;
@@ -48,8 +49,9 @@ public class CityWeatherWindowController implements Initializable {
             for (int i = 0; i < countryArray.size(); i++) {
                 JSONObject countryElement = (JSONObject) countryArray.get(i);
                 String countryName = (String) countryElement.get("country");
+                String countryCode = (String) countryElement.get("code");
                 countryNames.add(countryName);
-                Country newCountry = new Country(countryName);
+                Country newCountry = new Country(countryName, countryCode);
                 JSONArray cityArray = (JSONArray) countryElement.get("cities");
                 for (int j = 0; j < cityArray.size(); j++) {
                     JSONObject cityElement = (JSONObject) cityArray.get(j);
@@ -88,7 +90,8 @@ public class CityWeatherWindowController implements Initializable {
         AppConfiguration conf = AppConfiguration.getInstance();
         if (cityName != null && countryName != null) {
             try {
-                String jsonInfo = forecast.getWeatherInfo(cityName, conf.getUnits(), conf.getLanguage());
+                String query = cityName + "," + selectedCountry.getCountryCode();
+                String jsonInfo = forecast.getWeatherInfo(query, conf.getUnits(), conf.getLanguage());
                 if (jsonInfo == null) {
                     throw new RuntimeException("Failed to get weather info form server!");
                 }
@@ -118,7 +121,8 @@ public class CityWeatherWindowController implements Initializable {
             {
                 city.getItems().clear();
                 int index = (int)newValue;
-                ArrayList<String> cityNames = countries.get(index).getCities();
+                selectedCountry = countries.get(index);
+                ArrayList<String> cityNames = selectedCountry.getCities();
                 ObservableList<String> cityList = FXCollections.observableArrayList();
                 cityList.addAll(cityNames);
                 city.getItems().addAll(cityList);

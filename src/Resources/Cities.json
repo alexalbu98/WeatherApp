@@ -1,15 +1,17 @@
 [
     {
+        "code":"RO",
         "country":"Romania",
         "cities":[{"name":"Craiova"},
             {"name":"Timisoara"},
             {"name":"Iasi"},
             {"name":"Constanta"},
-                {"name":"Bucuresti"}]
+                {"name":"Bucharest"}]
     },
 
 
-    {
+    {   
+        "code":"GB",
         "country":"England",
         "cities":[{"name":"London"},
             {"name":"York"},
@@ -18,16 +20,18 @@
                 {"name":"Leicester"}]
     },
 
-    {
+    {   
+        "code":"FR",
         "country":"France",
         "cities":[{"name":"Nice"},
             {"name":"Marseille"},
             {"name":"Lyon"},
             {"name":"Nantes"},
-                {"name":"Bordeaux"}]
+                {"name":"Bordeaux"},{"name":"Paris"}]
     },
 
-    {
+    {   
+        "code":"ES",
         "country":"Spain",
         "cities":[{"name":"Madrid"},
             {"name":"Barcelona"},
@@ -36,7 +40,8 @@
                 {"name":"Bilbao"}]
     },
 
-    {
+    {   
+        "code":"DE",
         "country":"Germany",
         "cities":[{"name":"Berlin"},
             {"name":"Frankfurt"},
@@ -46,7 +51,8 @@
     },
 
 
-    {
+    {   
+        "code":"US",
         "country":"USA",
         "cities":[{"name":"New York"},
             {"name":"Los Angeles"},
@@ -56,13 +62,15 @@
     },
 
 
-    {
+    {   
+        "code":"CN",
         "country":"China",
         "cities":[{"name":"Beijing"},
             {"name":"Shenzhen"}]
     },
 
     {
+        "code":"GB",
         "country":"Scotland",
         "cities":[{"name":"Edinburgh"},
             {"name":"Glasgow"},
@@ -70,7 +78,8 @@
         ]
     },
 
-    {
+    {   
+        "code":"IE",
         "country":"Ireland",
         "cities":[{"name":"Dublin"},
             {"name":"Galway"},
@@ -78,12 +87,22 @@
         ]
     },
 
-    {
+    {   
+        "code":"IT",
         "country":"Italy",
         "cities":[{"name":"Roma"},
             {"name":"Turin"},
             {"name":"Milan"},
             {"name":"Parma"}
+        ]
+    },
+
+    {   
+        "code":"RU",
+        "country":"Russia",
+        "cities":[{"name":"Kazan"},
+                {"name": "Saint Petersburg"},
+                {"name": "Moscow"}
         ]
     }
     

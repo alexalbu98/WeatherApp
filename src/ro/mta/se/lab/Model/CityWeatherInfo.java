@@ -35,7 +35,7 @@ public class CityWeatherInfo implements Info {
     }
 
     private void getWindData(JSONObject wind){
-        this.wind_speed = (double)wind.get("speed");
+        this.wind_speed = Double.valueOf(String.valueOf(wind.get("speed")));
     }
 
     /**

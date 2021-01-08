@@ -5,10 +5,12 @@ public class Country {
 
     private String name;
     private ArrayList<City> cities;
+    private String countryCode;
 
-    public Country(String name){
+    public Country(String name, String code){
         this.name = name;
         this.cities = new ArrayList<City>();
+        this.countryCode = code;
     }
 
     public String getName(){
@@ -24,6 +26,8 @@ public class Country {
         this.cities.add(city);
     }
 
+    
+
     public ArrayList<String> getCities(){
         ArrayList<String> cityNames = new ArrayList<>();
         for(City city: cities){
@@ -31,4 +35,9 @@ public class Country {
         }
         return cityNames;
     }
+
+    public String getCountryCode() {
+        return countryCode;
+    }
+
 }
