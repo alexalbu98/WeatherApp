@@ -25,8 +25,8 @@ public class Main extends Application {
 
     public static void main(String[] args) {   
         SearchHistory history = SearchHistory.getInstance("history.txt");
-        AppConfiguration configuration = AppConfiguration.getInstance("src/Resources/Cities.json",
-        "http://api.openweathermap.org/data/2.5/weather", "1f811bcd144afbd814c2b4f5f02dfa0a", "metric", "en");
+        AppConfiguration configuration = AppConfiguration.getInstance(args[0],
+        "http://api.openweathermap.org/data/2.5/weather", "1f811bcd144afbd814c2b4f5f02dfa0a", args[1], "en");
         AppLogger logger = AppLogger.getInstance();
         Application.launch(args);
     }
