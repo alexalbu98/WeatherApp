@@ -25,5 +25,66 @@
             {"name":"Lyon"},
             {"name":"Nantes"},
                 {"name":"Bordeaux"}]
+    },
+
+    {
+        "country":"Spain",
+        "cities":[{"name":"Madrid"},
+            {"name":"Barcelona"},
+            {"name":"Valencia"},
+            {"name":"Sevilla"},
+                {"name":"Bilbao"}]
+    },
+
+    {
+        "country":"Germany",
+        "cities":[{"name":"Berlin"},
+            {"name":"Frankfurt"},
+            {"name":"Bremen"},
+            {"name":"Munich"},
+                {"name":"Cologne"}]
+    },
+
+
+    {
+        "country":"USA",
+        "cities":[{"name":"New York"},
+            {"name":"Los Angeles"},
+            {"name":"Denver"},
+            {"name":"Las Vegas"},
+                {"name":"New Jersey"}]
+    },
+
+
+    {
+        "country":"China",
+        "cities":[{"name":"Beijing"},
+            {"name":"Shenzhen"}]
+    },
+
+    {
+        "country":"Scotland",
+        "cities":[{"name":"Edinburgh"},
+            {"name":"Glasgow"},
+            {"name":"Inverness"}
+        ]
+    },
+
+    {
+        "country":"Ireland",
+        "cities":[{"name":"Dublin"},
+            {"name":"Galway"},
+            {"name":"Cork"}
+        ]
+    },
+
+    {
+        "country":"Italy",
+        "cities":[{"name":"Roma"},
+            {"name":"Turin"},
+            {"name":"Milan"},
+            {"name":"Parma"}
+        ]
     }
+    
 ]
