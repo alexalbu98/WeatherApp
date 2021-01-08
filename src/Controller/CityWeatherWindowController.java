@@ -13,8 +13,10 @@ import org.json.simple.parser.JSONParser;
 
 import Model.City;
 import Model.CityWeatherForecast;
+import Model.CityWeatherInfo;
 import Model.Country;
 import Model.WeatherForecast;
+import Singletons.AppConfiguration;
 import Singletons.AppLogger;
 import Singletons.AppStage;
 import javafx.collections.FXCollections;
@@ -71,7 +73,6 @@ public class CityWeatherWindowController implements Initializable {
             logger.logMessage("Failed to get cities data");
             return null;
         }
-
     }
 
     public void onGoBackClicked() {
@@ -82,15 +83,16 @@ public class CityWeatherWindowController implements Initializable {
     public void onFindWeatherClicked() {
         String cityName = city.getValue();
         String countryName = country.getValue();
+        AppConfiguration conf = AppConfiguration.getInstance();
         if (cityName != null && countryName != null) {
             try {
-                String jsonInfo = forecast.getWeatherInfo(cityName);
+                String jsonInfo = forecast.getWeatherInfo(cityName, conf.getUnits(), conf.getLanguage());
                 if(jsonInfo == null){
                     throw new RuntimeException("Failed to get weather info form server!");
                 }
-                JSONParser jsonParser = new JSONParser();
-                Object obj = jsonParser.parse(jsonInfo);
-                JSONArray infoArray = (JSONArray) obj;
+                CityWeatherInfo info = new CityWeatherInfo();
+                info.setWeatherInfo(jsonInfo);
+                result.setText(info.getInfo());
                 
             } catch (Exception e) {
                 AppLogger logger = AppLogger.getInstance();
@@ -102,9 +104,10 @@ public class CityWeatherWindowController implements Initializable {
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-            forecast = new CityWeatherForecast("http://api.openweathermap.org/data/2.5/weather", "1f811bcd144afbd814c2b4f5f02dfa0a");
+            AppConfiguration conf = AppConfiguration.getInstance();
+            forecast = new CityWeatherForecast(conf.getApiURL(), conf.getApiKEY());
             countries = new ArrayList<>();
-            ArrayList<String> countryNames = getCountries("src/Resources/Cities.json");
+            ArrayList<String> countryNames = getCountries(conf.getCitiesFile());
             ObservableList<String> countryList = FXCollections.observableArrayList();
             countryList.addAll(countryNames);
             country.getItems().addAll(countryList);

@@ -14,9 +14,9 @@ public class CityWeatherForecast implements WeatherForecast {
     }
 
     @Override
-    public String getWeatherInfo(String query){
+    public String getWeatherInfo(String query, String units, String language){
 
-        String url = this.url+"?" + "q=" + query + "&" + "appid=" + this.apiKEY;
+        String url = this.url+"?" + "q=" + query + "&" + "units=" + units + "&" + "lang=" + language + "&" + "appid=" + this.apiKEY;
         ApiRequest request = new ApiCityWeatherRequest(url);
         String response = request.send();
         if (response == null){

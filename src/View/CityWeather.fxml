@@ -28,7 +28,7 @@
       <ChoiceBox fx:id="city" prefWidth="150.0" />
       <AnchorPane prefHeight="58.0" prefWidth="600.0">
          <children>
-            <Text fx:id="result" layoutX="279.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text fx:id="result" fill="#5b45eb" layoutX="279.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="JUSTIFY" />
          </children></AnchorPane>
       <Button fx:id="find" mnemonicParsing="false" onAction="#onFindWeatherClicked" text="Find Weather" />
       <Button fx:id="goBack" mnemonicParsing="false" onAction="#onGoBackClicked" text="Go Back" />

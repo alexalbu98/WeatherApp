@@ -23,9 +23,6 @@ public class AppStage {
 
     static public AppStage getInstance() {
 
-        if (instance == null) {
-            instance = new AppStage();
-        }
         return instance;
     }
 
