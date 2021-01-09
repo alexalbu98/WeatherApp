@@ -5,18 +5,18 @@ public class AppConfiguration {
     private String apiURL;
     private String apiKEY;
     private String units;
-    private String citiesFile;
+    private String countryFile;
     static private AppConfiguration instance;
 
     private AppConfiguration(){}
 
-    private AppConfiguration(String citiesFile,String apiURL, String apiKEY, String units, String language){
+    private AppConfiguration(String countryFile,String apiURL, String apiKEY, String units, String language){
 
         this.apiURL = apiURL;
         this.apiKEY = apiKEY;
         this.units = units;
         this.language = language;
-        this.citiesFile = citiesFile;
+        this.countryFile = countryFile;
 
     }
     /**
@@ -28,16 +28,16 @@ public class AppConfiguration {
     }
     /**
      * 
-     * @param citiesFile is the file where the cities info is stored
+     * @param countryFile is the file where all the countries and cities are stored
      * @param apiURL is the api url for open weather 
      * @param apiKEY is the api key for open weather
      * @param units is the units in which data will be displayed
      * @param language is the language in which data to be displayed
      * @return an instance of AppConfiguration singleton class
      */
-    public static AppConfiguration getInstance(String citiesFile, String apiURL, String apiKEY, String units, String language){
+    public static AppConfiguration getInstance(String countryFile, String apiURL, String apiKEY, String units, String language){
         if (instance == null){
-            instance = new AppConfiguration(citiesFile, apiURL, apiKEY, units, language);
+            instance = new AppConfiguration(countryFile, apiURL, apiKEY, units, language);
         }
         return instance;
     }
@@ -68,8 +68,8 @@ public class AppConfiguration {
         this.units = units;
     }
 
-    public String getCitiesFile() {
-        return citiesFile;
+    public String getCountryFile() {
+        return countryFile;
     }
     
 

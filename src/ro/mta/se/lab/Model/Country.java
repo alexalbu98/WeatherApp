@@ -27,7 +27,10 @@ public class Country {
     }
 
     
-
+    /**
+     * 
+     * @return Returns an array containing all the cities names
+     */
     public ArrayList<String> getCities(){
         ArrayList<String> cityNames = new ArrayList<>();
         for(City city: cities){

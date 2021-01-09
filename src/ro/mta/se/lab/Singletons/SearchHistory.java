@@ -31,7 +31,10 @@ public class SearchHistory {
         }
         return instance;
     }
-
+    /**
+     * 
+     * @param search the user search that will be logged in a text file
+     */
     public void logSearch(String search){
         Date date = new Date();  
         FileWriter fr;

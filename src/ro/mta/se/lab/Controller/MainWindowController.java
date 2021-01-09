@@ -8,7 +8,9 @@ public class MainWindowController {
 
     public Button cityWeatherButton;
     public VBox vbox;
-
+    /**
+     * handles when the city weather button is clicked
+     */
     public void onCityWeatherButtonClicked() {
         AppStage app = AppStage.getInstance();
         app.setScene("../View/CityWeather.fxml");

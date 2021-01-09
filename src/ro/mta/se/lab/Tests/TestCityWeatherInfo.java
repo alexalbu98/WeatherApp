@@ -16,8 +16,10 @@ public class TestCityWeatherInfo extends TestCase{
     
     @Test
     public void testSetWeatherInfo(){
-      
-        
+      String data = "";
+      object.setInfo(data);
+      String info = object.getInfo();
+      assertEquals(null, info);    
     }
 
 }

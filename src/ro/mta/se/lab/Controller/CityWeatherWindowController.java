@@ -22,6 +22,7 @@ import ro.mta.se.lab.Model.City;
 import ro.mta.se.lab.Model.CityWeatherForecast;
 import ro.mta.se.lab.Model.CityWeatherInfo;
 import ro.mta.se.lab.Model.Country;
+import ro.mta.se.lab.Model.Info;
 import ro.mta.se.lab.Model.WeatherForecast;
 import ro.mta.se.lab.Singletons.AppConfiguration;
 import ro.mta.se.lab.Singletons.AppLogger;
@@ -40,6 +41,11 @@ public class CityWeatherWindowController implements Initializable {
     public ChoiceBox<String> city;
     public Text result;
 
+    /**
+     * 
+     * @param fileName the filename containing all the countries with the cities
+     * @return ArrayList containing all the country names
+     */
     private ArrayList<String> getCountries(String fileName) {
         JSONParser jsonParser = new JSONParser();
         ArrayList<String> countryNames = new ArrayList<>();
@@ -77,12 +83,17 @@ public class CityWeatherWindowController implements Initializable {
             return null;
         }
     }
-
+    /**
+     * Handles the event when the go back button is clicked
+     */
     public void onGoBackClicked() {
         AppStage app = AppStage.getInstance();
         app.setScene("../View/MainMenu.fxml");
     }
 
+    /**
+     * Handles when the findWeather button is clicked
+     */
     public void onFindWeatherClicked() {
         String cityName = city.getValue();
         String countryName = country.getValue();
@@ -96,8 +107,8 @@ public class CityWeatherWindowController implements Initializable {
                     throw new RuntimeException("Failed to get weather info form server!");
                 }
                 history.logSearch(jsonInfo);
-                CityWeatherInfo info = new CityWeatherInfo();
-                info.setWeatherInfo(jsonInfo);
+                Info info = new CityWeatherInfo();
+                info.setInfo(jsonInfo);
                 result.setText(info.getInfo());
                 
             } catch (Exception e) {
@@ -113,10 +124,11 @@ public class CityWeatherWindowController implements Initializable {
             AppConfiguration conf = AppConfiguration.getInstance();
             forecast = new CityWeatherForecast(conf.getApiURL(), conf.getApiKEY());
             countries = new ArrayList<>();
-            ArrayList<String> countryNames = getCountries(conf.getCitiesFile());
+            ArrayList<String> countryNames = getCountries(conf.getCountryFile());
             ObservableList<String> countryList = FXCollections.observableArrayList();
             countryList.addAll(countryNames);
             country.getItems().addAll(countryList);
+            //listener for when a country is selected
             country.getSelectionModel().selectedIndexProperty().addListener((v, oldValue, newValue)->
             {
                 city.getItems().clear();
