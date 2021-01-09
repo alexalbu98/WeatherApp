@@ -13,9 +13,9 @@ public class CityWeatherInfo implements Info {
 
     private String cityName;
     private String countryCode;
+    private String description;
     private double temp;
     private double wind_speed;
-    private String description;
     private double feels_like_temp;
     private double humidity;
     private double pressure;

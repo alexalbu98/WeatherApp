@@ -16,9 +16,9 @@
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="cityWeatherButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onCityWeatherButtonClicked" text="Find City Weather" textAlignment="JUSTIFY" />
-            <Label text="Units" textFill="#109de0">
+            <Label text=" Units Type" textFill="#1289b9">
                <font>
-                  <Font size="19.0" />
+                  <Font size="15.0" />
                </font>
             </Label>
             <ChoiceBox fx:id="units" prefWidth="150.0" />
