@@ -1,17 +1,15 @@
 # WeatherApp
 A Weather application in java using javafx
 
-## Getting Started
+## Description
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This app uses openweather.org api to gather weather data from cities around the world.
 
-## Folder Structure
+## Usage
 
-The workspace contains two folders by default, where:
+The app needs one parameter to run, a json file containing all the countries and cities
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
 
-## Dependency Management
+## Dependencies
 
-The `JAVA DEPENDENCIES` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-pack/blob/master/release-notes/v0.9.0.md#work-with-jar-files-directly).
+This app uses the javafx and json-simple libraries

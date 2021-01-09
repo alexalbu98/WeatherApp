@@ -14,7 +14,7 @@
             "type": "java",
             "name": "Launch Main",
             "request": "launch",
-            "args": ["src/Resources/Cities.json", "metric"],
+            "args": ["src/Resources/Cities.json"],
             "vmArgs": "--module-path /hdd/alex/JavaProjects/Tema2IP/lib --add-modules=javafx.controls,javafx.fxml",
             "mainClass": "ro.mta.se.lab.Main",
             "projectName": "Tema2IP_a491dbc"

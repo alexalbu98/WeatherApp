@@ -6,17 +6,19 @@ public class AppConfiguration {
     private String apiKEY;
     private String units;
     private String countryFile;
+    private String unitsFile;
     static private AppConfiguration instance;
 
     private AppConfiguration(){}
 
-    private AppConfiguration(String countryFile,String apiURL, String apiKEY, String units, String language){
+    private AppConfiguration(String countryFile, String unitsFile, String apiURL, String apiKEY, String units, String language){
 
         this.apiURL = apiURL;
         this.apiKEY = apiKEY;
         this.units = units;
         this.language = language;
         this.countryFile = countryFile;
+        this.unitsFile = unitsFile;
 
     }
     /**
@@ -35,9 +37,9 @@ public class AppConfiguration {
      * @param language is the language in which data to be displayed
      * @return an instance of AppConfiguration singleton class
      */
-    public static AppConfiguration getInstance(String countryFile, String apiURL, String apiKEY, String units, String language){
+    public static AppConfiguration getInstance(String countryFile, String unitsFile, String apiURL, String apiKEY, String units, String language){
         if (instance == null){
-            instance = new AppConfiguration(countryFile, apiURL, apiKEY, units, language);
+            instance = new AppConfiguration(countryFile, unitsFile, apiURL, apiKEY, units, language);
         }
         return instance;
     }
@@ -71,6 +73,9 @@ public class AppConfiguration {
     public String getCountryFile() {
         return countryFile;
     }
-    
+
+    public String getUnitsFile() {
+        return unitsFile;
+    }
 
 }
