@@ -53,6 +53,9 @@ public class CityWeatherInfo implements Info {
     @Override
     public void setInfo(String data) {
         try {
+            if(data == null){
+                throw new RuntimeException("Received null data as argument!");
+            }
             JSONParser parser = new JSONParser();
             Object obj = parser.parse(data);
             JSONObject weatherInfo = (JSONObject) obj;
@@ -65,9 +68,9 @@ public class CityWeatherInfo implements Info {
             getWeatherData(weather);
             getMainData(main);
             getWindData(wind);
-        } catch (ParseException e) {
+        } catch (Exception e) {
             AppLogger logger = AppLogger.getInstance();
-            logger.logMessage("Failed to parse weather data from json");
+            logger.logMessage("Failed to parse weather data received from server!");
         }
     }
 
