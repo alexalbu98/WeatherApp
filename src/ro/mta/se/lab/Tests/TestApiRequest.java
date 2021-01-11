@@ -1,5 +1,6 @@
 package ro.mta.se.lab.Tests;
 
+import static org.mockito.Mockito.*;
 
 import org.junit.Test;
 
@@ -16,5 +17,13 @@ public class TestApiRequest extends TestCase{
         assertNotNull(response);
     }
 
+    @Test
+    public void testSendMock(){
+        ApiCityWeatherRequest request = mock(ApiCityWeatherRequest.class);
+        when(request.send()).thenReturn("Response");
+
+        String result = request.send();
+        assertNotNull(result);
+    }
 
 }
